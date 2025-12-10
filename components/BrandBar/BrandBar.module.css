@@ -1,0 +1,34 @@
+.bar {
+  background-color: #0a0a0a;
+  padding: 15px 0;
+}
+
+/* wrapper for spacing */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+
+/* each brand box */
+.brand {
+  width: 140px;  
+  height: 50px;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image stays inside without stretching */
+.logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 1;
+}

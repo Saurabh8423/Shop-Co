@@ -1,0 +1,92 @@
+.hero {
+    background: #f3f1f1;
+    padding: 6px;
+    border-bottom: 8px solid #000
+}
+
+.left h2 {
+    font-family: var(--font-heading);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 0.95;
+    margin-bottom: 18px
+}
+
+.left p {
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+.left.btn{
+   width: 210px;
+   height: 52px;
+   border-radius: 62px;
+
+}
+
+.left .sub {
+    color: #6b6b6b;
+    max-width: 520px;
+    margin-bottom: 20px
+}
+
+.metrics {
+    display: flex;
+    gap: 28px;
+    margin-top: 28px
+}
+
+.metrics div {
+    min-width: 120px
+}
+
+.metrics div strong {
+    font-size: 36px;
+}
+
+.metrics p {
+    font-size: 14px;
+    color:#6b6b6b;
+}
+
+.right {
+    position: relative;
+  flex: 0 0 520px;
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
+}
+
+/* Floating Stars (S1, S2) */
+.star1 {
+  position: absolute;
+  top: 220px;
+  left: -60px;
+}
+
+.star2 {
+  position: absolute;
+  top: 50px;
+  right: -40px;
+}
+
+@media (max-width:1024px) {
+    .left h2 {
+        font-size: 48px
+    }
+
+    .right {
+        display: none
+    }
+}
+
+@media (max-width:480px) {
+    .left h2 {
+        font-size: 32px
+    }
+
+    .metrics {
+        flex-direction: column;
+        gap: 10px
+    }
+}

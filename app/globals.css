@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --bg: #f7f7f7;
+  --white: #ffffff;
+  --muted: #f0f0f0;
+  --text: #111;
+  --accent: #000;
+  --radius: 14px;
+  --container: 1350px;
+  --max-width: 1350px;
+  --gap: 24px;
+  --font-heading: 'Poppins', 'Montserrat', sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%}
+body{
+  font-family:var(--font-body);
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Container helper */
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 20px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Utility */
+.flex{display:flex}
+.center{display:flex;align-items:center;justify-content:center}
+.row{display:flex;gap:var(--gap)}
+.col{display:flex;flex-direction:column;gap:16px}
+
+/* Buttons */
+.btn{
+  display:inline-block;padding:12px 24px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+}
+
+/* Responsive breakpoints */
+@media (max-width:1024px){:root{--container:940px}}
+@media (max-width:768px){:root{--container:720px}}
+@media (max-width:480px){
+  :root{--container:420px}
+  .btn{padding:10px 18px}
 }

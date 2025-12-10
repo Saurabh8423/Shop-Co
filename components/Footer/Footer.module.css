@@ -1,0 +1,164 @@
+.footerWrapper {
+  background: #f2f2f2;
+  padding: 0;
+}
+
+/* ----------------- NEWSLETTER BAR ----------------- */
+.newsletterBar {
+  background: #000;
+  color: #fff;
+  padding: 18px 80px;
+  border-radius: 16px;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsTitle {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.newsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 380px;
+}
+
+.inputBox {
+  background: #fff;
+  height: 48px;
+  width: 349px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 10px;
+}
+
+.inputBox input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.mailIcon {
+  font-size: 20px;
+  color: #545454;
+  opacity: 0.7;
+}
+
+.emailInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #000 !important;  
+}
+
+.emailInput::placeholder {
+  color: #545454 !important;    
+  opacity: 1;
+}
+
+.subscribeBtn {
+  background: #fff;
+  height: 48px;
+  width: 349px;
+  font-weight: 600;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  color: #000 !important;   
+}
+
+/* ----------------- MAIN FOOTER ----------------- */
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 40px 0 30px;
+}
+
+/* LEFT BOX */
+.leftBox {
+  max-width: 300px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #545454;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.socialIcons>*:hover {
+  opacity: 0.7;
+}
+
+/* ----------------- COLUMNS ----------------- */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  gap: 90px;
+}
+
+.column h4 {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.column li:hover {
+  opacity: 0.7;
+}
+
+/* ----------------- BOTTOM ROW ----------------- */
+.bottomRow {
+  border-top: 1px solid #ccc;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paymentIcons {
+  display: flex;
+  gap: 12px;
+}
+
+.paymentIcons img {
+  width: 46px;
+  height: 30px;
+  object-fit: contain;
+}

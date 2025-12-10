@@ -1,0 +1,85 @@
+.wrapper {
+  padding: 60px 0;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.arrows {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.arrow {
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.arrow:hover {
+  background: black;
+  color: white;
+}
+
+/* Cards list */
+.cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+
+  /* HIDE SCROLLBAR */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cards::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+/* Single Card */
+.card {
+  min-width: 350px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stars {
+  color: #ffc107;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.tick {
+  color: green;
+}
+
+.review {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
