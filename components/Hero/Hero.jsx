@@ -4,10 +4,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div
-        className="container"
-        style={{ display: "flex", alignItems: "center", gap: 40 }}
-      >
+      <div className={`container ${styles.heroContainer}`}>
         <div className={styles.left}>
           <h2>
             FIND CLOTHES
@@ -16,11 +13,13 @@ export default function Hero() {
             <br />
             YOUR STYLE
           </h2>
+
           <p className={styles.sub}>
             Browse through our diverse range of meticulously crafted garments,
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
+
           <a className="btn" href="#new">
             Shop Now
           </a>
@@ -58,8 +57,6 @@ export default function Hero() {
             height={600}
             priority
           />
-
-           {/* Floating images (S1 & S2) */}
 
           <Image
             src="/images/S2.png"

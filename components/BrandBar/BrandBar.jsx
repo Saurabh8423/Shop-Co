@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function BrandBar() {
   const brands = [
     "/images/L1.png",
-    "/images/L2.png",
+    "/images/Z2.png",
     "/images/L3.png",
     "/images/L4.png",
     "/images/L5.png",

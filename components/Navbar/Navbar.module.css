@@ -1,71 +1,258 @@
+/* NAV BASE */
 .nav {
   background: #fff;
   border-bottom: 1px solid #eee;
-  padding: 12px 0;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 300;
+  padding: 10px;
+  transition: box-shadow 0.25s ease;
 }
 
+.shadow {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* container layout adjustments */
+.leftBox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* BRAND */
 .brand h1 {
   font-family: var(--font-heading);
   font-size: 32px;
   font-weight: 800;
+  margin: 0;
   letter-spacing: 1px;
 }
 
+/* CENTER (desktop only) */
 .center {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+/* DESKTOP MENU */
 .menu {
   list-style: none;
   display: flex;
   gap: 18px;
   font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
-/* Search container */
-.search {
+/* Desktop search */
+.desktopSearch {
   position: relative;
-  width: 577px;
-  margin-left: 25px;
+  width: 480px;
+  display: flex;
+  align-items: center;
 }
 
-.search input {
-  padding: 10px 16px 10px 44px; /* space for icon */
+.desktopSearch input {
+  width: 100%;
+  padding: 10px 14px 10px 44px;
   border-radius: 62px;
   border: 1px solid #eee;
-  background-color: #f0f0f0;
-  width: 100%;
+  background: #f6f6f6;
 }
 
-/* search icon inside input */
 .searchIcon {
   position: absolute;
+  left: 14px;
   top: 50%;
-  left: 16px;
   transform: translateY(-50%);
-  font-size: 20px;
-  color: #555;
+  color: #666;
+  font-size: 18px;
 }
 
-.actions .icon {
+/* ACTION ICONS (always right) */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
   background: none;
   border: none;
-  font-size: 24px;
-  gap: 5px;
-  margin-left: 8px;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .search {
-    width: 150px;
+/* HAMBURGER (hidden desktop) */
+.hamburger {
+  display: none;
+  z-index: 350 !important;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* dark overlay (for menu/search) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 115;
+  animation: fadeIn 200ms ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
   }
 
-  .menu {
+  to {
+    opacity: 1
+  }
+}
+
+/* ---------------------------
+   MOBILE / TABLET (≤768px)
+   --------------------------- */
+@media (max-width: 768px) {
+
+  /* show hamburger */
+  .hamburger {
+    display: inline-flex;
+    position: relative;
+    z-index: 200 !important;
+  }
+
+  /* center (desktop menu) is hidden in header area; menu goes to slide panel */
+  .center {
+    display: none;
+  }
+
+  /* desktopSearch (hidden) */
+  .desktopSearch {
+    display: none;
+  }
+
+  /* actions stay visible and fixed on right */
+  .actions {
+    gap: 10px;
+  }
+
+  /* SLIDE-IN MENU from LEFT */
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background: #fff;
+    z-index: 140;
+    transform: translateX(-100%);
+    transition: transform 320ms cubic-bezier(.2, .9, .2, 1);
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.12);
+    padding-top: 80px;
+    /* leave space for header */
+  }
+
+  .mobileMenu ul {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .mobileMenu ul li button {
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    padding: 12px 8px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .mobileMenuOpen {
+    transform: translateX(0);
+  }
+
+  /* NOTE: mobileMenu element is absolutely positioned outside header - style classes used by JSX */
+  /* in this file we set .mobileMenu and .mobileMenuOpen on nav element below header */
+
+  /* MNYTRA-STYLE SEARCH (slide down) */
+  .mobileSearchWrap {
+    position: fixed;
+    top: 64px;
+    /* below header */
+    left: 0;
+    right: 0;
+    z-index: 130;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 300ms ease, opacity 200ms ease;
+    opacity: 0;
+  }
+
+  .mobileSearchOpen {
+    max-height: 72px;
+    opacity: 1;
+  }
+
+  .mobileSearchInner {
+    margin: 8px 16px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobileSearchInner input {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    flex: 1;
+  }
+
+  .mobileSearchIcon {
+    font-size: 20px;
+    color: #666;
+  }
+}
+
+/* ---------------------------
+   SMALL DEVICES (≤480px)
+   --------------------------- */
+@media (max-width: 480px) {
+  .brand h1 {
+    font-size: 26px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .mobileSearchInner {
+    margin: 8px 12px;
+  }
+}
+
+/* ---------------------------
+   Ensure desktop remains unchanged
+   --------------------------- */
+@media (min-width: 769px) {
+
+  /* mobile-only elements hidden */
+  .mobileMenu,
+  .mobileSearchWrap {
     display: none;
   }
 }

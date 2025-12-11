@@ -8,24 +8,19 @@
     gap: 20px
 }
 
-@media (max-width:1024px) {
+
+/* TABLET ≤ 768px */
+@media (max-width: 768px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 }
 
-@media (max-width:768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-}
-
-@media (max-width:480px) {
+/* MOBILE ≤ 480px */
+@media (max-width: 480px) {
     .grid {
         grid-template-columns: 1fr;
-        overflow-x: auto;
-        display: flex;
-        padding-bottom: 12px;
-        gap: 12px
+        gap: 16px;
     }
 }

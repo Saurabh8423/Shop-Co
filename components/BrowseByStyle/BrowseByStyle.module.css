@@ -45,7 +45,7 @@
 
 /* BASE CARD */
 .card {
-  position: relative;
+  /* position: relative; */
   background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
@@ -73,19 +73,60 @@
   object-fit: cover;
 }
 
-/* Mobile Responsive */
+/* ===========================================================
+      TABLET ( ≤ 768px )
+   =========================================================== */
 @media (max-width: 768px) {
+
   .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
 
+  /* remove desktop widths */
   .small,
   .large {
-    width: 100%;
+    width: 100% !important;
+  }
+
+  /* same height cards */
+  .card {
+    height: 240px;
+  }
+
+  /* remove margin-left that hides last card */
+  .item4 {
+    margin-left: 0 !important;
+  }
+}
+
+
+/* ===========================================================
+      MOBILE ( ≤ 480px )
+   =========================================================== */
+@media (max-width: 480px) {
+
+  .wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
 
   .card {
-    height: 220px;
+    height: 200px;
+    border-radius: 16px;
+  }
+
+  .image {
+    object-fit: cover;
   }
 }
